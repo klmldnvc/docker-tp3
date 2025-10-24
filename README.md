@@ -13,7 +13,7 @@ docker-tp3/ etape1/ -> Nginx + PHP (phpinfo) etape2/ -> Nginx + PHP + MariaD
 Commande réseau : docker network create tp3
 Lancer PHP-FPM : docker run -d --name script --network tp3 -v $(pwd)/app:/app php:8.2-fpm
 Lancer Nginx : docker run -d --name http --network tp3 -p 8080:80 -v $(pwd)/app:/app -v $(pwd)/config/default.conf:/etc/nginx/conf.d/default.conf nginx:latest
-Test : ouvrir http://localhost:8080 
+Test : ouvrir [localhost:8080 ](http://localhost:8080)
 
 Résultat attendu : phpinfo()
 
